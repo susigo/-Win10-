@@ -1,0 +1,62 @@
+﻿<Window x:Class="MV_EXE_1_0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:视觉演示EXE_1_0"
+        mc:Ignorable="d"
+        Title="算子演示" Height="720" Width="1216.8">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="fun_section" Header="功能区/Functins" HorizontalAlignment="Left" Height="664" Margin="10,10,0,0" VerticalAlignment="Top" Width="267">
+            <Grid HorizontalAlignment="Left" Height="630" Margin="10,10,0,0" VerticalAlignment="Top" Width="238">
+                <Button x:Name="b_Canny" Content="Canny" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Canny_Clicked"/>
+                <Button x:Name="b_Laplacian" Content="Laplacian" HorizontalAlignment="Left" Margin="128,10,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Laplacian_clicked"/>
+                <Button x:Name="b_Sobel" Content="Sobel" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Sobel_clicked"/>
+                <Button x:Name="b_Robert" Content="Roberts" HorizontalAlignment="Left" Margin="128,70,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Robert_clicked"/>
+                <Button x:Name="b_Kirsch" Content="Kirsch" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Kirsch_clicked"/>
+                <Button x:Name="b_Susan" Content="SUSAN" HorizontalAlignment="Left" Margin="128,130,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Susan_clicked"/>
+                <Button x:Name="b_save" Content="保存/save" HorizontalAlignment="Left" Margin="10,312,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Save_clicked"/>
+                <Button x:Name="b_reset" Content="清除/reset" HorizontalAlignment="Left" Margin="128,312,0,0" VerticalAlignment="Top" Width="100" Height="43" Click="Reset_clicked"/>
+                <TextBox x:Name="debug_win" HorizontalAlignment="Left" Height="163" Margin="10,400,0,0" TextWrapping="Wrap" Text="Debug" VerticalAlignment="Top" Width="223" TextChanged="TextBox_TextChanged"/>
+                <ComboBox x:Name="sel_img" HorizontalAlignment="Left" Margin="21,243,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="sel_img_SelectionChanged"/>
+                <Label x:Name="ori_img_name" Content="原始图像/Origin Image" HorizontalAlignment="Left" Margin="42,212,0,0" VerticalAlignment="Top" Width="148"/>
+                <StatusBar x:Name="print_cur_info" HorizontalAlignment="Left" Height="28" Margin="10,580,0,0" VerticalAlignment="Top" Width="218"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Canny_setting" Header="Canny Setting" HorizontalAlignment="Left" Height="310" Margin="293,19,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237">
+                <Slider x:Name="Canny_min" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="208" Height="23" Maximum="255" Value="1" ValueChanged="Canny_min_ValueChanged"/>
+                <Slider x:Name="Canny_max" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="208" Height="23" Maximum="255" Value="200"/>
+                <Label Content="Canny min" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="77"/>
+                <Label Content="Canny max" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="77"/>
+                <TextBox x:Name="Canny_max_show" HorizontalAlignment="Left" Height="23" Margin="119,136,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="99"/>
+                <RichTextBox x:Name="Canny_min_show" HorizontalAlignment="Left" Height="26" Margin="119,20,0,0" VerticalAlignment="Top" Width="99" TextChanged="RichTextBox_TextChanged">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="RichTextBox"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Roberts Setting" HorizontalAlignment="Left" Height="308" Margin="293,366,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237"/>
+        </GroupBox>
+        <GroupBox Header="Laplacian Setting" HorizontalAlignment="Left" Height="310" Margin="595,19,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237"/>
+        </GroupBox>
+        <GroupBox Header="Kirsch Setting" HorizontalAlignment="Left" Height="308" Margin="595,366,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237"/>
+        </GroupBox>
+        <GroupBox Header="Sobel Setting" HorizontalAlignment="Left" Height="310" Margin="890,19,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237"/>
+        </GroupBox>
+        <GroupBox Header="Susan Setting" HorizontalAlignment="Left" Height="308" Margin="890,366,0,0" VerticalAlignment="Top" Width="247">
+            <Grid HorizontalAlignment="Left" Height="275" Margin="0,10,-1.8,0" VerticalAlignment="Top" Width="237"/>
+        </GroupBox>
+    </Grid>
+</Window>
